@@ -1,0 +1,77 @@
+Respostas - prova 1 - POO
+
+1) import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class prova {
+	public static void main(String[] args){
+		Scanner ent = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		float salario, salario_user, total;
+		
+		System.out.println("Digite o valor do salário mínimo: \n");
+		salario = ent.nextFloat();
+		
+		System.out.println("Digite o valor do seu salário: \n");
+		salario_user = ent.nextFloat();
+		
+		calc = salario / salario_user;
+		
+		System.out.printf("O funcionário ganha: " + df.format(calc) + " salários mínimos");
+	}
+}
+
+
+2) V, F, V, F, F, V, V, V, V,F
+
+3) Thursday
+
+4) int var = (int)d;
+
+5) //isso é um comentário
+
+6) i = 42;
+
+7) ==
+
+8) import java.util.Scanner;
+public class Programa {
+    public static void main(String args[]) {
+      int contador = 0;
+      boolean vetor[] = new boolean[5];//criação do vetor de 5 posições
+      Scanner userIn = new Scanner(System.in); //criação do objeto de input
+      
+      for (int i = 0; i<5; i++){
+          vetor[i]=false;//inicialização da variável
+          System.out.println("Digite "+(i+1)+"º booleano: ");
+
+          vetor[i] = userIn.nextBoolean();
+          
+          if (vetor[i] == true){
+            contador++;
+          }
+      }
+      
+      System.out.println("O número de elementos iguais a true é: "+contador);
+      
+    }
+}
+
+9) final double x = 3.81;
+
+10) System.out.println(numero % 2 != 0) ? “Número Ímpar” : “Número Par”);
+
+11) string carro = "Toyota";
+
+12) int [ ] x = {1,2,3,4};
+
+13) String [] m = {"casa","apartamento","sítio","chalé"};
+      for(int y = 0;y<4;y++)
+  { 
+     System.out.println(m[y]);
+  }
+
+14) enum tam {
+        PP, P, M, G, GG
+  }
