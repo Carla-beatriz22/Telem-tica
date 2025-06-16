@@ -1,0 +1,6 @@
+display 7 segmentos
+
+contador decrescente, se pressionada deve mudar pra crescente
+
+0~9 se pressionada
+9~0 se solta
