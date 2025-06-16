@@ -1,0 +1,19 @@
+1) O que fez surgir a necessidade de QoS nas redes?
+2) Toda aplicação precisa de uma comunicação 100% confiável? Por que?
+3) Como vem evoluindo o tipo de tráfego na Internet nas últimas décadas?
+4) Solucionam-se problemas de QoS tornando a banda mais veloz?
+5) QoS já era pensando nos anos 80? De que forma?
+6) Por que é difícil implementar QoS?
+7) Qual a diferença entre QoS e CoS?
+9) Quais os parâmetros que podemos mensurar em QoS?
+9) Quais riscos de segurança existem com a adoção de negociação de QoS na rede?
+10) Quais os modelos de QoS existentes?
+11) O que é o RSVP? Sintetize o fluxo de sua operação.
+12) RSVP é uma solução escalável?
+13) O que é o DiffServ?
+14) O que é o DSCP?
+15) O que é o PHB?
+16) Cite e explique o princípio de 3 tipos de filas.
+17) Cite e explique uma política de descarte.
+18) Como funciona o algoritmo de Leaky Bucket?
+19) Como funciona o algoritmo de Token Bucket?
