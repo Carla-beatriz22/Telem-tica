@@ -1,0 +1,68 @@
+#include <16F874.H>  //Biblioteca do PIC utilizado
+
+#use delay(clock=1000000)
+#fuses XT,NOWDT,NOPUT
+
+int verdeA = 0;
+int verdeB = 0;
+int tempo = 0;
+int fluxo_a = 0;
+int fluxo_b = 0;
+
+#INT_RB
+void trata_(){
+if (input(PIN_B4) == 0){
+  if (verdeA == 1)
+    fluxo_a++;
+    
+}
+  if (input(PIN_B5) == 0){
+    if (verdeB == 1)
+      fluxo_b++;
+      
+  }
+  
+}
+
+int compara (int fluxo_corrente, int fluxo_anterior){
+   if(fluxo_corrente <= 1.3*fluxo_anterior){
+      return 0;}
+   if((fluxo_corrente > 1.3*fluxo_anterior) && (fluxo_corrente <= 1.6*fluxo_anterior)){
+      return 1;}
+   if(fluxo_corrente > 1.6*fluxo_anterior){
+      return 2;}
+}
+
+void main() {
+ 	enable_interrupts(GLOBAL | INT_RB);
+	while(TRUE){
+		output_d(0b00001100); //vermelho2, amarelo2, verde2, vermelho1, amarelo1, verde1
+          verdeB = 1;
+          delay_ms(15000);
+          verdeB = 0;
+          tempo = compara(fluxo_b, fluxo_a);
+          fluxo_a = 0;
+       if (tempo == 0)
+           delay_ms(10000);
+       if (tempo == 1)
+           delay_ms(20000);
+       if (tempo == 2)
+           delay_ms(30000);
+      output_d(0b000001010); //vermelho2, amarelo2, verde2, vermelho1, amarelo1, verde1
+		   delay_ms(4000);
+      output_d(0b00100001); //vermelho2, amarelo2, verde2, vermelho1, amarelo1, verde1
+          verdeA = 1;
+          delay_ms(15000);
+          verdeA = 0;
+          tempo = compara(fluxo_a, fluxo_b);
+          fluxo_a = 0;
+       if (tempo == 0)
+           delay_ms(10000);
+       if (tempo == 1)
+           delay_ms(20000);
+       if (tempo == 2)
+           delay_ms(30000);
+      output_d(0b00010001); //vermelho2, amarelo2, verde2, vermelho1, amarelo1, verde1
+		   delay_ms(4000);
+  }
+}      
