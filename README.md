@@ -1,2 +1,2 @@
-# Telem-tica
+# Telematica
 Atividades, conteúdos, materiais
